@@ -1,26 +1,44 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'NAME', description: 'Please tell me your name')
-        string(name: 'DESC', description: 'Describe...')
-        choice(name: 'BRANCH', choices: ['Master', 'Dev'], description: 'Choose the branch')
-        booleanParam(name: 'SKIP_TEST', description: 'Want to skip running Test cases?')
-        password(name: 'SONAR_SERVER_PWD', description: 'Enter SONAR password')
+        string(name: 'NAME', description: 'Please tell me your name?')
 
+        text(name: 'DESC', description: 'Describe about the job details')
+
+        booleanParam(name: 'SKIP_TEST', description: 'Want to skip running Test cases?')
+
+        choice(name: 'BRANCH', choices: ['Master', 'Dev'], description: 'Choose branch')
+
+        password(name: 'SONAR_SERVER_PWD', description: 'Enter SONAR password')
     }
     stages {
-        stage('Printing name') {
+        stage('Printing Parameters') {
             steps {
-                script {
-                    def name = "${params.NAME}"
-                    def branche = "${params.BRANCH}"
-                    if(branche == "Dev") {
-                        echo "Dev Branch"    
-                    } else {
-                        echo "Master Branch"
-                    }
-                }
+                echo "Hello ${params.NAME}"
+
+                echo "Job Details: ${params.DESC}"
+
+                echo "Skip Running Test case ?: ${params.SKIP_TEST}"
+
+                echo "Branch Choice: ${params.BRANCH}"
+
+                echo "SONAR Password: ${params.SONAR_SERVER_PWD}"
             }
         }
-   }
+    stage('BUILD') {
+            steps {
+                echo 'Developpement'
+            }
+        }
+    stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
+        stage('DEPLOY') {
+            steps {
+                echo 'Mise en Production'
+            }
+        }
+    }
 }
