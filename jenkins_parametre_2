@@ -14,7 +14,7 @@ pipeline {
                 script {
                     def name = "${params.NAME}"
                     def branche = "${params.BRANCH}"
-                    if(gender == "Dev") {
+                    if(branche == "Dev") {
                         echo "Dev Branch"    
                     } else {
                         echo "Master Branch"
