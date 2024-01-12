@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo 'OK: Mise à jour de la Plage de Dates'
                 echo 'OK: Optimisation du Temps de Chargement'
-                echo 'OK: Promotion des Soldes d'Été pour Saturne'
+                echo 'OK: Promotion des Soldes pour Saturne'
                 echo 'OK: Gestion de la Concentration des Réservoirs de Carburant'
                 echo 'OK: Réduction de la Consommation de Carburant'
                 echo 'OK: Recrutement d'un Ingénieur en Propulsion'
