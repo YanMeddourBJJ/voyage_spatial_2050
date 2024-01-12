@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    stages {
+      stage('build') {
+            steps {
+              script{
+                echo "Dabut du build"
+                sleep 10
+                echo "Build terminé"
+              }
+                
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'OK: Mise à jour de la Plage de Dates'
+                echo 'OK: Optimisation du Temps de Chargement'
+                echo 'OK: Promotion des Soldes d'Été pour Saturne'
+                echo 'OK: Gestion de la Concentration des Réservoirs de Carburant'
+                echo 'OK: Réduction de la Consommation de Carburant'
+                echo 'OK: Recrutement d'un Ingénieur en Propulsion'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Début de la Mise en Production'
+                script {
+                    sleep 5
+                    echo 'Mise en Production terminée'
+                }
+            }
+        }
+}
