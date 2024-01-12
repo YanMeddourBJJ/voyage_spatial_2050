@@ -20,7 +20,7 @@ pipeline {
                 echo 'OK: Promotion des Soldes pour Saturne'
                 echo 'OK: Gestion de la Concentration des Réservoirs de Carburant'
                 echo 'OK: Réduction de la Consommation de Carburant'
-                echo 'OK: Recrutement d'un Ingénieur en Propulsion'
+                echo 'OK: Recrutement d un ingénieur en propulsion'
             }
         }
         stage('Deploy') {
